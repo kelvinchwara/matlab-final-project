@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 
 from lexurapp.models import Contact,Otherchefs,Book,Order
-from lexurapp.forms import ChefsUploadForm,ContactForm,BookForm,OrderForm
+from lexurapp.forms import ChefsUploadForm,ContactForm,BookForm
 
 
 # Create your views here.
@@ -134,4 +134,12 @@ def delete_contact(request, id):
     contact=Contact.objects.get(id=id)
     contact.delete()
     return redirect('/showcontact')
+def delete_room(request, id):
+    rooms=Book.objects.get(id=id)
+    rooms.delete()
+    return redirect('/bookingdetails')
+def delete_order(request, id):
+    order=Order.objects.get(id=id)
+    order.delete()
+    return redirect('/showorder')
 
