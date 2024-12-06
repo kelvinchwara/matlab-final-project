@@ -1,0 +1,86 @@
+{% extends "starter-page.html" %}
+{% load static %}
+{% block body %}
+
+     <!-- Chefs Section -->
+    <section id="chefs" class="chefs section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h1>Chefs</h1>
+        <p>Our Proffesional Chefs</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/chefs/chefs-1.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Helly Rickross</h4>
+                <h6>Head Chef</h6>
+                <p>Walter oversees all operations ,menu planning and staff management</p>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/chefs/chefs-2.jpg' %}" class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>Vale Harrison</h4>
+                <h6>Sous Chef</h6>
+                <p>Responsible in assisting Helly Rickross and managing kitchen activities</p>
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/chefs/chefs-3.jpg' %}" class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>William John</h4>
+                <h6>Station Chef</h6>
+                  <p>Specialized in roasts,veges,fish sauces among others </p>
+
+              </div>
+            </div>
+          </div><!-- End Chef Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Chefs Section -->
+<h1 class="text-center" style="padding: 40px">Other Chefs</h1>
+    <div class="container" style="width: 100%;">
+          <div style="display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap">
+               {% for image in images %}
+              <div >
+                  <img src="{{ image.image.url }}" alt="" style="width: 400px;height:400px"> <br>
+                  <p>Title {{ image.title }}</p>
+                  <p>Description {{ image.description }}</p>
+              </div>
+           {% endfor %}
+          </div>
+
+
+{% endblock %}

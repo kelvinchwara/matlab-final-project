@@ -1,0 +1,121 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+
+    <section class="bg-light py-5">
+    <h1>Kindly edit your details below </h1>
+
+
+    <form method="POST" action="/updatecontact/{{ contact.id }}/">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <style>
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+
+input[type="datetime-local"],
+input[type="number"],
+select,
+textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+select {
+
+}
+
+textarea {
+  height: 80px;
+}
+
+button[type="submit"] {
+
+  background-color: #ae2020;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type="submit"]:hover {
+  background-color: darkblue;
+}
+
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+</style>
+        <div class="form-group">
+            <input type="text" value="{{ contact.name }}" id="name" name="name" placeholder="Full Name" required="required">
+
+        </div>
+
+        <div class="form-group ">
+
+            <input type="email" value="{{ contact.email }}" id="email" name="email" placeholder="name@example.com" required="required">
+        </div>
+
+        <div class="form-group ">
+
+            <input type="text" value="{{ contact.subject }}" id="subject" name="subject" placeholder="subject" required="required">
+        </div>
+
+
+
+
+
+
+
+         <div class="form-group">
+              <textarea class="form-control" name="message" value="{{ contact.message }}" rows="6" placeholder="Message" required="required"></textarea>
+            </div>
+
+
+       <div style="display: flex; justify-content: space-around;">
+           <button type="submit">Submit</button>
+       </div>
+    </form>
+    </section>
+{% endblock %}

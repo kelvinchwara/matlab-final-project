@@ -1,0 +1,47 @@
+{% extends 'starter-page.html' %}
+{% block body %}
+</div>
+   <h1 class="text-center p-3">Lexur, Your destiny!</h1>
+    <p class="text-center p-2">We'll reach  out to you shortly</p>
+
+    <table class="table table-info container ">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Menu</th>
+        <th>Guests</th>
+        <th>Conference room</th>
+        <th>Arrival</th>
+        <th>Action</th>b
+    </tr>
+
+
+
+    {% for x in order %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.menu }}</td>
+            <td>{{ x.guests }}</td>
+            <td>{{ x.conference }}</td>
+            <td>{{ x.arrival }}</td>
+
+            <td>
+                <a href="" class="btn btn-warning">EDIT</a>
+                <a href="" class="btn btn-success">DELETE</a>
+                <a href="" class="btn btn-danger">PAY</a>
+            </td>
+        </tr>
+
+    {% endfor %}
+
+
+
+    </table>
+
+
+
+
+</div>
+
+{% endblock %}

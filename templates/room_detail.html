@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ room_type }}</title>
+</head>
+<body>
+<h1>{{ room_type }}</h1>
+<p>Price : ${{ price }}</p>
+<a href="{% url 'booking_form' room_type=room_type %}" class=" btn btn-danger">book now</a>
+</body>
+</html>

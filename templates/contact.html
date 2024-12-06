@@ -1,0 +1,141 @@
+{% extends "starter-page.html" %}
+{% load static %}
+{% block body %}
+
+
+
+
+      <div class="container section-title" data-aos="fade-up" >
+
+        <p class="text-center mt-5">Contact Us</p>
+      </div>
+
+
+
+
+<div style="display: flex; margin: 20px">
+        <form  method="POST" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <style>
+
+                h1 {
+                    text-align: center;
+                    font-size: 2em;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    text-align: center;
+                    color: #888;
+                    margin-bottom: 30px;
+                }
+
+                form {
+                    width: 50%;
+                    margin:0 auto;
+                    height: 50%;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                }
+
+                .form-group {
+                    margin-bottom: 15px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                label {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                input[type="text"],
+                input[type="email"],
+                input[type="number"],
+
+                input[type="datetime-local"],
+                input[type="number"],
+                select,
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                }
+
+                select {
+
+                }
+
+                textarea {
+                    height: 80px;
+                }
+
+                button[type="submit"] {
+
+                    background-color: #ae2020;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    float: right;
+                }
+
+                button[type="submit"]:hover {
+                    background-color: darkblue;
+                }
+
+
+                input[type="radio"] {
+                    margin-right: 10px;
+                }
+            </style>
+            <div class="form-group">
+
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+            </div>
+
+            <div class="form-group ">
+
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group ">
+
+                <input type="text" id="subject" name="subject" placeholder="subject" required>
+            </div>
+
+
+
+            <div class="form-group">
+                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+
+<div style="display: flex; justify-content: space-around;">
+           <button type="submit">Submit</button>
+       </div>
+
+
+
+
+</form>
+
+
+
+
+</div>
+
+    <div style="width:100%;   padding: 20px; " >
+        <h1 class="text-center " style="color: darkred; font-size: 50px">Our location</h1>
+        <p style="font-size: 30px">Lexur hotel located along Kisii-Kilgoris road, a home away from home</p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" style="width: 100%; height: 600px; margin-bottom: 20px"></iframe>
+    </div><!-- End Google Maps -->
+{% endblock %}

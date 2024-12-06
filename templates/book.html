@@ -1,0 +1,151 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+
+
+
+<body>
+    <h1>Book now! </h1>
+    <p>We got you covered</p>
+
+    <form method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+        {{ form.as_p }}
+        <style>
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+
+input[type="datetime-local"],
+input[type="number"],
+select,
+textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+select {
+
+}
+
+textarea {
+  height: 80px;
+}
+
+button[type="submit"] {
+
+  background-color: #ae2020;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type="submit"]:hover {
+  background-color: darkblue;
+}
+
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+</style>
+        <div class="form-group">
+            <label for="name">Enter your name </label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+        </div>
+
+        <div class="form-group ">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="ex: myname@example.com" required>
+        </div>
+
+        <div class="form-group" >
+            <label for="menu">Room type:</label>
+            <select  id="room"  name="room" required >
+                <option disabled>Select room</option>
+                <option value="executive">Conference</option>
+                <option value="executive">Executive</option>
+                <option value="business ">Business</option>
+                <option value="Superior">Superior</option>
+                <option value="presidential">Presidential</option>
+
+            </select>
+        </div>
+
+        <div class="form-group" >
+            <label for="menu">Menu type:</label>
+            <select  id="menu"  name="menu" required >
+                <option disabled>Select menu</option>
+                <option value="n/a">N/A</option>
+                <option value="starters">Starters</option>
+                <option value="Breakfast ">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Beverages">Beverages</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="arrival-date" id="datetime">Arrival Date & Time:</label>
+            <input type="datetime-local" id="arrival-datetime" name="arrival" required >
+
+        </div>
+
+        <div class="form-group">
+            <label for="arrival-date" id="datetime">Departure Date & Time:</label>
+            <input type="datetime-local" id="arrival-datetime" name="departure" required >
+
+        </div>
+
+         <div class="form-group">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+
+       <div style="display: flex; justify-content: space-around;">
+           <button type="submit">Submit</button>
+       </div>
+    </form>
+{% endblock %}
