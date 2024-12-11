@@ -1,10 +1,10 @@
 {% extends 'starter-page.html' %}
 {% block body %}
 </div>
-   <h1 class="text-center p-3">Lexur, Your destiny!</h1>
-    <p class="text-center p-2">We'll reach  out to you shortly</p>
+   <h1 class="text-center p-4" style="font-size: 60px">Lexur, Your destiny!</h1>
+    <p class="text-center p-4" style="font-size: 40px">We'll reach  out to you shortly</p>
 
-    <table class="table table-info container ">
+    <table class="table table-bordered table-secondary border-black container" style="margin-top: 50px;margin-bottom: 50px; padding-top: 50px">
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -12,7 +12,7 @@
         <th>Guests</th>
         <th>Conference room</th>
         <th>Arrival</th>
-        <th>Action</th>b
+        <th>Edit/Delete details</th>
     </tr>
 
 
@@ -27,9 +27,9 @@
             <td>{{ x.arrival }}</td>
 
             <td>
-                <a href="" class="btn btn-warning">EDIT</a>
-                <a href="{% url 'delete_order' x.id %}" class="btn btn-success">DELETE</a>
-                <a href="" class="btn btn-danger">PAY</a>
+                <a href="{% url 'editorders' x.id %}" class="btn btn-secondary">EDIT</a>
+                <a href="{% url 'delete_order' x.id %}" class="btn btn-secondary">DELETE</a>
+
             </td>
         </tr>
 

@@ -8,7 +8,7 @@
     <h1>Place your order now! </h1>
     <p>We got you covered</p>
 
-    <form method="POST" >
+    <form method="POST" action="/updateorders/{{ order.id }}/">
     {% csrf_token %}
         {{ form.as_p }}
         <style>
@@ -120,7 +120,7 @@ input[type="radio"] {
 
          <div class="form-group" >
             <label for="conference">Need a conference room</label>
-            <select  id="conference" vlaue="{{ order.conference }}" name="conference" required >
+            <select  id="conference" value="{{ order.conference }}" name="conference" required >
                 <option disabled>Select</option>
                 <option value="yes" {% if order.conference == 'Yes' %} selected {% endif %}>Yes</option>
                 <option value="no " {% if order.conference == 'No' %} selected {% endif %}>No</option>

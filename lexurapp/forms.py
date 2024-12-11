@@ -1,5 +1,5 @@
 from django import forms
-from lexurapp.models import Otherchefs, Book, Contact,Order
+from lexurapp.models import Otherchefs, Book, Contact,Order,GalleryPage
 
 
 class ChefsUploadForm(forms.ModelForm):
@@ -19,6 +19,11 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = '__all__'
+class GalleryPageForm(forms.ModelForm):
+    class Meta:
+        model = GalleryPage
+        fields = '__all__'
+
 
 
 

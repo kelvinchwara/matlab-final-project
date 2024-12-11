@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
 
-from lexurapp.models import Contact,Otherchefs,Book,Order
-from lexurapp.forms import ChefsUploadForm,ContactForm,BookForm
+from lexurapp.models import Contact, Otherchefs, Book, Order, GalleryPage
+from lexurapp.forms import ChefsUploadForm, GalleryPageForm, BookForm, OrderForm
 
 
 # Create your views here.
@@ -16,8 +16,6 @@ def starter(request):
 def events(request):
     return render(request, 'events.html')
 
-def gallery(request):
-    return render(request, 'gallery.html')
 def menu(request):
     return render(request, 'menu.html')
 
@@ -45,6 +43,9 @@ def showorder(request):
 def editcontact(request, id):
     allcontacts= Contact.objects.get(id=id)
     return render(request, 'editcontact.html', {'contact' : allcontacts})
+def editorders(request, id):
+    allorders= Order.objects.get(id=id)
+    return render(request, 'editorders.html', {'order' : allorders})
 
 
 def book(request):
@@ -85,15 +86,25 @@ def update(request, id):
     else:
         return render(request, 'edit.html')
 def updatecontact(request, id):
-    updateinfo=Contact.objects.get(id=id)
+    updateinfo=Order.objects.get(id=id)
     if request.method == 'POST':
-        form = ContactForm(request.POST, instance=updateinfo)
+        form = OrderForm(request.POST, instance=updateinfo)
         if form.is_valid():
             form.save()
-            return redirect('/showcontact')
+            return redirect('/showorder')
         else:
-            form = ContactForm(instance=updatecontacts)
-        return render(request, 'editcontact.html', {'form': form})
+            form = OrderForm(instance=updateorders)
+        return render(request, 'editorders.html', {'form': form})
+def updateorders(request, id):
+    updateinfo=Order.objects.get(id=id)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, instance=updateinfo)
+        if form.is_valid():
+            form.save()
+            return redirect('/showorder')
+        else:
+            form = OrderForm(instance=updateorders)
+        return render(request, 'editorders.html', {'form': form})
 
 
 
@@ -125,6 +136,20 @@ def upload_image(request):
 def chef(request):
     images = Otherchefs.objects.all()
     return render(request, 'chef.html', {'images': images})
+def gallery(request):
+    images = GalleryPage.objects.all()
+    return render(request, 'gallery.html', {'images': images})
+
+def update_gallery(request):
+    if request.method == 'POST':
+        form = GalleryPageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/gallery')
+    else:
+        form = GalleryPageForm()
+    return render(request, 'update_gallery.html', {'form': form})
+
 
 def delete(request, id):
     appoint = Appointment.objects.get(id=id)

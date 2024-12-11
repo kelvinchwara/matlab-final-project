@@ -2,10 +2,10 @@
 {% block body %}
 </div>
 
-    <h1 class="text-center p-3">Thank You for your response!</h1>
-    <p class="text-center p-2">We'll reach  out to you shortly</p>n
+    <h1 class="text-center p-4" style="font-size: 60px">Thank You for your response!</h1>
+    <p class="text-center p-4" style="font-size: 40px">We'll reach  out to you shortly</p>n
 
-    <table class="table table-info container ">
+    <table class="table table-bordered table-secondary border-black container" style="margin-top: 50px;margin-bottom: 50px; padding-top: 50px">
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -16,7 +16,7 @@
         <th>Message</th>
 
 
-        <th>Action</th>
+        <th>Edit/Delete details</th>
     </tr>
 
 
@@ -32,9 +32,9 @@
             <td>{{ x.message }}</td>
 
             <td>
-                <a href="{% url 'edit' x.id %}" class="btn btn-warning">EDIT</a>
-                <a href="{% url 'delete_room' x.id %}" class="btn btn-success">DELETE</a>
-                <a href="" class="btn btn-danger">PAY</a>
+                <a href="{% url 'edit' x.id %}" class="btn btn-secondary">EDIT</a>
+                <a href="{% url 'delete_room' x.id %}" class="btn btn-secondary">DELETE</a>
+
             </td>
         </tr>
 

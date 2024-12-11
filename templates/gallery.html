@@ -44,4 +44,19 @@
 
 
     </div>
+
+    <div class="container" style="width: 100%;  display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;">
+          <div style="display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap">
+               {% for image in images %}
+              <div >
+                  <img src="{{ image.image.url }}" alt="" style="width: 300px; margin: 10px;height:250px; padding: 20px"> <br>
+
+              </div>
+           {% endfor %}
+          </div>
+
  {% endblock %}
