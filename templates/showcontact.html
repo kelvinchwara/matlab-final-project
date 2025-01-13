@@ -1,0 +1,39 @@
+{% extends 'starter-page.html' %}
+{% block body %}
+ <h1 class="text-center p-4" style="font-size: 60px">We're glad for your response!</h1>
+    <p class="text-center p-4" style="font-size: 40px"> <b>We'll reach  out to you shortly</b></p>
+    <table class="table table-bordered table-secondary border-black container" style="margin-top: 50px;margin-bottom: 50px; padding-top: 50px">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Edit/Delete details</th>
+    </tr>
+
+
+
+    {% for x in contact %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.subject }}</td>
+            <td>{{ x.message }}</td>
+            <td>
+                <a href="{% url 'editcontact' x.id %}" class="btn btn-success">EDIT</a>
+                <a href="{% url 'delete_contact' x.id %}" class="btn btn-success">DELETE</a>
+
+            </td>
+        </tr>
+
+    {% endfor %}
+
+
+
+    </table>
+
+
+
+
+
+{% endblock %}

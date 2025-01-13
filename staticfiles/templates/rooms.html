@@ -1,0 +1,151 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+
+
+          <div style="position: relative;" >
+          <img src="{% static 'assets/room/room1.jpg' %}" alt="lexur logo" style="height: 300px; width: 100%; opacity: 0.9">
+          <div style="position: absolute;top:0;right:0;bottom:0;left:0; color: white; font-size: 70px;  align-items: center; justify-content: center;">
+          <h1 style="font-size: 70px; color: white ; margin-top: 30px"><br>Rooms</h1>
+              <p>Affordable Comfort & Convenience!</p>
+          </div>
+
+
+          </div>
+    <h1 class="text-center" style="margin-top: 40px">Lexur Hotel, Your home away from home</h1>
+    <div  style="display: flex;  flex-wrap: revert">
+    <div style="width:40%; margin-left: 100px;margin-top: 100px; justify-content: center; align-items: center;" >
+
+        <p>lexur hotel rooms are designed to provide the highest levels of Comfort, Convenience an Efficiency, supported by the latest in technology. the hotel boasts 55 well-appointed and air-conditioned rooms; a Presidential suite, an executive suite, business suites and superior rooms.</p>
+        <ul>
+            <li>43 Superior Rooms </li>
+            <li>9 Business Suites</li>
+            <li>2 Executive Suites</li>
+            <li>1 Presidential Suite</li>
+        </ul>
+
+    </div>
+    <div style="width:40%; margin-left: 50px; margin-top: 50px; padding:20px;"  >
+        <h1 >Room Amenities</h1>
+        <ul>
+            <li>TV with DSTV Connection</li>
+            <li>Complimentary high speed Wi-Fi</li>
+            <li>USB port</li>
+            <li>Minibar</li>
+            <li>Safety deposit box</li>
+            <li>Coffee/tea making facilities</li>
+            <li>Hair dryers and Iron/Ironing boards on request</li>
+            <li>Bathrooms and toiletries</li>
+            <li>Bathtub (Executive and Presidential suite)</li>
+            <li>Living room with couch , dining area and separate cloakroom(Executive Suite)</li>
+            <li>Living room with office desk ,couch, dining area and separate cloakroom(Presidential Suite)</li>
+        </ul>
+
+    </div>
+
+    </div>
+    <h1 class="text-center p-4">Our Rooms</h1>
+
+    <div  style="display: flex; margin-right: 20px; margin-bottom: 20px; justify-content: center; align-items: center;" >
+    <div  style="margin-right: 20px; padding:20px;width: 40%;background-color: aliceblue">
+        <img src="{% static 'assets/room/superior2.jpeg' %}" alt="" height="300px" width="450px" >
+        <h1>Superior Rooms</h1>
+        <h2>Features</h2>
+        <p>The superior rooms are Air-conditioned and feature a Smart TV, free wifi providing seamless connectivity of personal devices ,USB port, minibar on request, in-room digital safety deposit facility, tea/coffee making kit, telephone, hair dryer Iron/Ironing board upon request and stand-in shower</p>
+
+    </div>
+
+
+    <div  style=" padding:20px ; width: 40%; background-color: aliceblue">
+        <img src="{% static 'assets/room/room1.jpg' %}" alt="" height="300px" width="450px" >
+        <h1>Business Suites</h1>
+        <h2>Features</h2>
+        <p>The Business Suites are air-conditioned and feature a Smart TV ,free wifi providing seamless connectivity of personal devices, USB port, minibar on request, coffee table and 2 2 seats, in-room digital safety deposit facility, tea/coffee making kit, telephone, hair dryer Iron/Ironing board on request and standard in shower</p>
+
+    </div>
+
+
+    </div>
+
+ <div  style="display: flex; margin-right: 20px; margin-bottom: 20px; justify-content: center; align-items: center;" >
+    <div  style="margin-right: 20px; padding:20px;width: 40%;background-color: aliceblue">
+        <img src="{% static 'assets/room/executive1.jpeg' %}" alt="" height="300px" width="450px" >
+        <h1>Executive Suite</h1>
+        <h2>Features</h2>
+        <p>The executive suite has a lounge and dining area . The suite is air-conditioned and features two Smart Tvs , complimentary high speed internet access providing seamless connectivity of personal devices , USB port, minibar on request, in-room digital safety deposit facility, tea/coffee making kit , telephone, har dryers , Iron/Ironing board , stand-in shower and bathtub,separate sitting area with couch and dining area as well as a private room for visitor
+</p>
+
+    </div>
+
+
+    <div  style=" padding:20px ; width: 40%; background-color: aliceblue">
+        <img src="{% static 'assets/room/presidential.jpeg' %}" alt="" height="300px" width="450px" >
+        <h1>Presidential Suite</h1>
+        <h2>Features</h2>
+        <p>Lexur Hotel boasts a presidential site whose features include a lounge and a dining area. The site is air-conditioned and features two Smart TVs, free wifi access providing seamless connectivity of personal devices, , USB port, minibar on request, in-room digital safety deposit facility, tea/coffee making kit , telephone, har dryers , Iron/Ironing board , stand-in shower and bathtub,separate sitting area with office desk, couch and dining area as well as a private room fo visitor
+</p>
+
+
+
+    </div>
+
+
+    </div>
+
+
+    <h1 style="margin-top : 50px" class="text-center">Our Pricing</h1>
+
+    <div class="container mt-5">
+    <table class="table table-bordered table-striped text-center">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Room Type</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Presidential Suite</td>
+            <td>$230</td>
+            <td><a href="{% url 'book' %}" class="btn btn-danger">Book Now Pay later</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Executive Suite</td>
+            <td>$190</td>
+            <td><a href="{% url 'book' %}" class="btn btn-danger">Book Now Pay later</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Superior Suite</td>
+            <td>$160</td>
+            <td><a href="{% url 'book' %}" class="btn btn-danger">Book Now Pay later</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Business Suite</td>
+            <td>$1450</td>
+            <td><a href="{% url 'book' %}" class="btn btn-danger">Book Now Pay later</a></td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

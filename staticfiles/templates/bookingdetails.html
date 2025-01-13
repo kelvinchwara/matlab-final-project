@@ -1,0 +1,52 @@
+{% extends 'starter-page.html' %}
+{% block body %}
+</div>
+
+    <h1 class="text-center p-4" style="font-size: 60px">Thank You for your response!</h1>
+    <p class="text-center p-4" style="font-size: 40px">We'll reach  out to you shortly</p>n
+
+    <table class="table table-bordered table-secondary border-black container" style="margin-top: 50px;margin-bottom: 50px; padding-top: 50px">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Room</th>
+        <th>Menu</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Message</th>
+
+
+        <th>Edit/Delete details</th>
+    </tr>
+
+
+
+    {% for x in book %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.room }}</td>
+            <td>{{ x.menu }}</td>
+            <td>{{ x.arrival }}</td>
+            <td>{{ x.departure }}</td>
+            <td>{{ x.message }}</td>
+
+            <td>
+                <a href="{% url 'edit' x.id %}" class="btn btn-secondary">EDIT</a>
+                <a href="{% url 'delete_room' x.id %}" class="btn btn-secondary">DELETE</a>
+
+            </td>
+        </tr>
+
+    {% endfor %}
+
+
+
+    </table>
+
+
+
+
+</div>
+
+{% endblock %}

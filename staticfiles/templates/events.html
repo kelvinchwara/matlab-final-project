@@ -1,0 +1,82 @@
+{% extends "starter-page.html" %}
+{% load static %}
+{% block body %}
+
+    <div style="position: relative;" >
+          <img src="{% static 'assets/room/con2.jpg' %}" alt="lexur logo" style="height: 300px; width: 100%; opacity: 0.9">
+          <div style="position: absolute;top:0;right:0;bottom:0;left:0; color: white; font-size: 70px;  align-items: center; justify-content: center;">
+          <h1 style="font-size: 70px;  color: white ; margin-top: 30px"><br>Meetings & Events</h1>
+              <p>The Ideal venue for every occasion</p>
+          </div>
+
+
+          </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+
+    <div style=" padding: 40px; max-width: 800px; margin: 20px;">
+        <h1 style="text-align: center ; padding: 30px; font-family: 'sans-serif'">Meeting and Events</h1>
+       <p>Lexur hotel offers great facilities that  inspire and truly engage delegates hence creating a productive environment with a touch of great customer experience from our warmand proffessional meetings and events associates who are at your services when needed.</p>
+       <p>Whatever the event , our team is ready to make the occassion memorable and highly rewarding. The modern meeting rooms and boardrooms feature state-of-the-art audio-visual equipment,air-conditioning,access to high-speed internet and a business center for all your printing needs</p>
+
+    </div>
+    <div class="col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100" style="width: 600px;">
+            <img src="{% static 'assets/room/con4.jpg' %}" class="img-fluid mb-1" alt="">
+
+          </div>
+
+
+
+
+    </div>
+    <div>
+
+    </div>
+     <div style="display: flex; justify-content: center; align-items: center;">
+
+    <div style=" padding: 40px; width: 800px; margin: 20px;">
+        <h1 style="text-align: center ; padding: 30px; font-family: 'sans-serif'">Meeting Room Configuration</h1>
+      <p>When it comes to booking for business meetings,conferences, launches, and corporate or private events,look no further than Lexur Hotel Kisii. We have 3 conference rooms which can cater for up to 200PAX </p>
+    </div>
+    <div class="col-lg-4 mt-5 mb-4" data-aos="fade-up" data-aos-delay="100" style="width: 600px; ">
+            <img src="{% static 'assets/room/con1.jpg' %}" class="img-fluid mb-1" alt="">
+
+          </div>
+
+
+
+
+    </div>
+    <div>
+
+    </div>
+    <div class="bg-secondary-subtle" style=" padding: 40px; text-align: center;">
+
+    <h1 style="color: black">Meeting room features and facilities</h1><br>
+    <div style=" display: flex; justify-content: center;">
+
+
+        <div style="text-align: center; color: black; margin-right: 150px">
+        <img class="rounded-pill" src="{% static 'assets/room/sotav.jpeg' %}" alt="" style="width: 50px; margin-bottom: 10px;">
+        <p>State-of-the-art Audio <br> Visual Equipment</p>
+        </div>
+        <div style="text-align: center; color: black; margin-right: 150px">
+        <img class="rounded-pill" src="{% static 'assets/room/wifi1.jpeg' %}" alt="" style="width: 50px; margin-bottom: 10px;">
+        <p>Free & Fast WiFi</p>
+        </div>
+        <div style="text-align: center; color: black; ">
+        <img class="rounded-pill" src="{% static 'assets/room/aircs.jpeg' %}" alt="" style="width: 50px; margin-bottom: 10px;">
+        <p>Air Conditioning</p>
+        </div>
+    </div>
+    </div>
+    <div style="text-align: center; padding: 60px;">
+    <h1>Have an Upcoming meeting/event?</h1>
+    <p>Contact us and our team will revert the most favourable rates/packages that will suit your requirements.</p>
+     <div class="text-center">
+         <a href="{% url 'book' %}" class="btn btn-danger rounded-5">Book Now</a>
+
+     </div>
+    </div>
+
+{% endblock %}

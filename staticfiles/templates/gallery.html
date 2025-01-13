@@ -1,0 +1,62 @@
+{% extends "starter-page.html" %}
+{% load static %}
+{% block body %}
+    <style>
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .image-gallery img{
+        width: 20%;
+        height: 200px;
+        object-fit: cover;
+        margin: 10px;
+
+    }
+    </style>
+ <h1 class="text-center mt-5">Lexur Hotel Kisii</h1>
+    <p class="text-center">Sprinting With The Champions</p>
+
+    <div class="image-gallery">
+        <img src="{% static 'assets/room/con1.jpg' %}" alt="">
+
+        <img src="{% static 'assets/room/con4.jpg' %}" alt="">
+        <img src="{% static 'assets/room/con2.jpg' %}" alt="">
+         <img src="{% static 'assets/room/dinning2.jpg' %}" alt="">
+        <img src="{% static 'assets/room/dining1.jpg' %}" alt="">
+        <img src="{% static 'assets/img/menu/beef3.jpg' %}" alt="">
+        <img src="{% static 'assets/img/menu/beef2.jpg' %}" alt="">
+        <img src="{% static 'assets/img/menu/menu-item-4.png' %}" alt="">
+        <img src="{% static 'assets/room/room1.jpg' %}" alt="">
+        <img src="{% static 'assets/room/executive1.jpeg' %}" alt="">
+        <img src="{% static 'assets/room/presidential.jpeg' %}" alt="">
+        <img src="{% static 'assets/room/superior2.jpeg' %}" alt="">
+        <img src="{% static 'assets/room/hotel1.jpeg' %}" alt="">
+        <img src="{% static 'assets/room/gal1.jpeg' %}" alt="">
+        <img src="{% static 'assets/img/menu/hotel2.jpeg' %}" alt="">
+        <img src="{% static 'assets/img/menu/gal3.jpeg' %}" alt="">
+        <img src="{% static 'assets/room/events-1.jpg' %}" alt="">
+        <img src="{% static 'assets/room/events-2.jpg' %}" alt="">
+        <img src="{% static 'assets/room/events-3.jpg' %}" alt="">
+        <img src="{% static 'assets/room/events-4.jpg' %}" alt="">
+
+
+
+    </div>
+
+    <div class="container" style="width: 100%;  display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;">
+          <div style="display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap">
+               {% for image in images %}
+              <div >
+                  <img src="{{ image.image.url }}" alt="" style="width: 300px; margin: 10px;height:250px; padding: 20px"> <br>
+
+              </div>
+           {% endfor %}
+          </div>
+
+ {% endblock %}
