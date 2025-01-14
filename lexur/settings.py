@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-2*o=0sj4q*!093qn0adqj-x+g(=zx5!&(owwavhfmmhyot2#3i
 DEBUG = False
 
 
-ALLOWED_HOSTS = [ '127.0.0.1', 'yourappame.onrender.com']
+ALLOWED_HOSTS = [ '127.0.0.1', 'lexurmotel.onrender.com']
 
 
 # Application definition

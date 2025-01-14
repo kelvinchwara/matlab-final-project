@@ -27,3 +27,12 @@
 5. install gunicorn : pip install gunicorn 
 6. df
 7. push code to github
+
+
+
+### on render 
+1. create a new web service
+2. connect it to github acc
+3. add build commmands
+4. add start commands
+5. ensure the env is set to the python
